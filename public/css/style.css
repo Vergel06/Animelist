@@ -1,0 +1,65 @@
+/* LANDING CSS */
+/* LANDING CSS */
+.hero {
+    background-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, 0.989) 0%, rgba(0, 0, 0, 0.726) 50%, rgba(0, 0, 0, 0.556) 100%
+    ), url("../pics/123.webp"); /* <--- Dinagdagan ng ../ sa simula */
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    color: white;
+}
+.btn-red { 
+  background-color: #e50914c4 !important; 
+  color: #000 !important; font-weight: bold;
+}
+        
+.rounded-pill-custom { border-radius: 50px !important; 
+}
+
+
+.black-section {
+background-color: #000000c5;
+color: white;
+padding: 50px 0;
+}
+
+
+
+
+/* REGISTRATION CSS */
+
+input:-webkit-autofill {
+-webkit-box-shadow: 0 0 0 30px #111 inset !important;
+-webkit-text-fill-color: white !important;
+}
+
+.msg-success { color: #28a745; font-size: 14px; }
+.msg-error { color: #e50914; font-size: 14px; }
+    
+.form-control { border: 1px solid #333 !important; }
+
+   
+.form-control:focus:invalid {
+border-color: #e50914 !important;
+box-shadow: 0 0 0 0.25rem rgba(255, 77, 77, 0.25) !important;
+}
+
+    
+.form-control:focus:valid {
+border-color: #28a745 !important;
+box-shadow: 0 0 0 0.25rem rgba(40, 167, 69, 0.25) !important;
+}
+
+.form-control {
+            background-color: #111 !important;
+            color: white !important;
+            padding: 14px !important;
+        }
+        .login-link:hover {
+            color: #e50914 !important;
+        }
+
+
+

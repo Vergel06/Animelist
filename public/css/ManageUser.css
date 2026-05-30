@@ -1,0 +1,93 @@
+:root { 
+    --yuminet-red: #e50914; 
+    --dark-bg: #0a0a0a;
+    --card-bg: #111111; 
+}
+
+body { 
+    background-color: #0a0a0a !important;
+    color: white !important;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.sidebar { 
+    width: 260px; height: 100vh; background: #000;
+    position: fixed; border-right: 1px solid #222;
+    z-index: 1000;
+}
+
+.nav-link { 
+    color: #888; transition: 0.3s;
+    border-radius: 8px; margin-bottom: 5px;
+}
+
+.nav-link:hover, .nav-link.active {
+    background: rgba(229, 9, 20, 0.1);
+    color: var(--yuminet-red) !important;
+}
+
+.mobile-nav {
+    background: #000; border-bottom: 1px solid #222;
+}
+
+.offcanvas {
+    background-color: #000 !important;
+    border-right: 1px solid #222; width: 280px !important;
+}
+
+.main-content {
+    margin-left: 260px;
+    padding: 40px; 
+    transition: 0.3s;
+}
+
+@media (max-width: 991.98px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+        padding-top: 80px;
+    }
+}
+
+
+.stat-card {
+    background: var(--card-bg); border: 1px solid #222;
+    border-radius: 12px; padding: 20px; transition: 0.3s;
+}
+
+.stat-card:hover {
+    border-color: var(--yuminet-red);
+    transform: translateY(-5px);
+}
+
+.welcome-banner {
+    background: linear-gradient(135deg, rgba(229, 9, 20, 0.2) 0%, rgba(0,0,0,0) 100%);
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+}
+
+
+.table-container {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    border-radius: 15px; overflow: hidden;
+}
+
+.table thead { background: #1a1a1a; }
+.table td { padding: 18px 12px; border-color: #222; }
+
+/* --- Forms & Buttons --- */
+.btn-red {
+    background-color: var(--yuminet-red) !important;
+    border: none; font-weight: 700;
+    transition: 0.3s; color: white;
+}
+
+.btn-red:hover { opacity: 0.8; transform: scale(1.02); color: white; }
+
+.form-select, .main-content .form-control {
+    background-color: #000 !important; color: white !important;
+    border-color: #333 !important;
+}
+
