@@ -8,8 +8,46 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/ManageUser.css') }}">
+    <style>
+        /* Mobile adjustment para hindi matakpan ang content ng fixed navbar */
+        @media (max-width: 991px) {
+            .main-content { padding-top: 80px; }
+        }
+    </style>
 </head>
 <body>
+
+    <nav class="navbar fixed-top d-lg-none" style="background: #000; border-bottom: 1px solid #222;">
+        <div class="container-fluid">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <a class="navbar-brand mx-auto">
+                <img src="{{ asset('pics/yumi.png') }}" height="30">
+            </a>
+            <div style="width: 45px;"></div> 
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header p-4">
+            <img src="{{ asset('pics/yumi.png') }}" style="max-height: 35px;">
+            <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-4">
+            <ul class="nav flex-column mb-auto">
+                <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link text-white py-2"><i class="bi bi-grid-1x2-fill me-3"></i>Dashboard</a></li>
+                <li class="nav-item"><a href="{{ route('users.index') }}" class="nav-link active text-white fw-bold py-2"><i class="bi bi-people-fill me-3"></i>Manage Users</a></li>
+                <li class="nav-item"><a href="{{ route('profile') }}" class="nav-link text-white py-2"><i class="bi bi-person-circle me-3"></i>My Profile</a></li>
+            </ul>
+            <div class="mt-auto pt-4">
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-danger w-100 fw-bold border-0 py-2"><i class="bi bi-box-arrow-left me-2"></i>Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <div class="sidebar p-4 d-none d-lg-flex flex-column">
         <div class="mb-5 px-3">
@@ -157,8 +195,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label small text-secondary fw-bold">EMAIL ADDRESS</label>
-                            
-                            <input type="email" name="email" class="form-control bg-dark text-white border-secondary shadow-none" placeholder="Enter email" required autocomplete="new-password" value="">
+                            <input type="email" name="email" class="form-control bg-dark text-white border-secondary shadow-none" placeholder="Enter email" required>
                         </div>
                         <div class="mb-4">
                             <label class="form-label small text-secondary fw-bold">ROLE</label>
@@ -167,16 +204,6 @@
                                 <option value="Admin">Admin</option>
                             </select>
                         </div>
-
-                        <div class="p-3 mb-4 rounded bg-info bg-opacity-10 border border-info border-opacity-25">
-                            <small class="text-info d-block">
-                                <i class="bi bi-info-circle-fill me-1"></i> 
-                                <strong>Default Passwords:</strong><br>
-                                • Admin role: <strong>admin1234</strong><br>
-                                • User role: <strong>user1234</strong>
-                            </small>
-                        </div>
-
                         <button type="submit" class="btn btn-danger w-100 py-3 fw-bold">SAVE USER</button>
                     </form>
                 </div>
